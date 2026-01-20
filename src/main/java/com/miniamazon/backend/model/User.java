@@ -23,4 +23,6 @@ public class User {
     private String address;
 
     private String phone;
+
+    private String password;
 }
