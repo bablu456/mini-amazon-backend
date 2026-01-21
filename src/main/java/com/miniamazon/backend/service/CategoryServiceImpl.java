@@ -17,7 +17,7 @@ public class CategoryServiceImpl implements CategoryService{
     private CategoryRepository categoryRepository;
 
     public CategoryResponseDTO createCategory(CategoryRequestDTO categoryRequestDTO){
-        if(categoryRepository.existByName(categoryRequestDTO.getName())){
+        if(categoryRepository.existsByName(categoryRequestDTO.getName())){
             throw new RuntimeException("Category with this name already exists!");
         }
 
