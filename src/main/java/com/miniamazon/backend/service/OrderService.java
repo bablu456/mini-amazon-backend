@@ -8,5 +8,5 @@ import java.util.List;
 public interface OrderService {
     OrderResponseDTO placeOrder(OrderRequestDTO orderRequestDTO);
 
-    List<OrderResponseDTO> getOrdersByUsersId(String userId);
+    List<OrderResponseDTO> getOrdersByUserId(String userId);
 }
