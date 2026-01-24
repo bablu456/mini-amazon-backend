@@ -46,7 +46,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<ProductResponseDTO> getProductsByCategoryId(String categoryId){
-        List<Product> products = productRepository.findByCategories(categoryId);
+        List<Product> products = productRepository.findByCategoryId(categoryId);
 
         return products.stream().map(this::mapToResponseDTO).collect(Collectors.toList());
     }
