@@ -18,6 +18,9 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements ProductService{
 
     @Autowired
+    private AIService aiService;
+
+    @Autowired
     private ProductRepository productRepository;
 
     @Autowired
@@ -29,11 +32,14 @@ public class ProductServiceImpl implements ProductService{
 
         Product product = new Product();
         product.setName(productRequestDTO.getName());
-        product.setDescription(productRequestDTO.getDescription());
         product.setPrice(productRequestDTO.getPrice());
         product.setImageUrl(productRequestDTO.getImageUrl());
         product.setCategory(category);
 
+        if(productRequestDTO.getDescription() == null || productRequestDTO.getDescription().isEmpty()){
+            String aiDescription = aiService.generateDescription(productRequestDTO.getName());
+            product.setDescription(productRequestDTO.getDescription());
+        }
         Product savedProduct = productRepository.save(product);
 
         return  mapToResponseDTO(savedProduct);
