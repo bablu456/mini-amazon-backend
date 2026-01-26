@@ -29,7 +29,7 @@ public class OrderServiceImpl implements OrderService{
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
+    @Override
     public OrderResponseDTO placeOrder(OrderRequestDTO orderRequestDTO){
 
         User user  = userRepository.findById(orderRequestDTO.getUserId())

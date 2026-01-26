@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService{
         userResponseDTO.setName(userRequestDTO.getName());
         userResponseDTO.setPhone(userRequestDTO.getPhone());
         userResponseDTO.setAddress(userRequestDTO.getAddress());
-        userResponseDTO.setId(userResponseDTO.getId());
+        userResponseDTO.setId(userRequestDTO.getId());
 
         return userResponseDTO;
     }

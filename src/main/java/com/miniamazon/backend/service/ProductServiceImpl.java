@@ -20,6 +20,7 @@ public class ProductServiceImpl implements ProductService{
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
     private CategoryRepository categoryRepository;
 
     public ProductResponseDTO createProduct(ProductRequestDTO productRequestDTO){
